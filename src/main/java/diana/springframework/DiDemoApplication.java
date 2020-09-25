@@ -7,8 +7,11 @@ import diana.springframework.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+//basePackages overwrites the default behavior of springboot (looks for classes beneath springframework folder)
+@ComponentScan(basePackages = {"diana.services","diana.springframework"})
 public class DiDemoApplication {
 
     public static void main(String[] args) {
