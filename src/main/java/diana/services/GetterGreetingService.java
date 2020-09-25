@@ -1,4 +1,4 @@
-package diana.springframework.services;
+package diana.services;
 
 import org.springframework.stereotype.Service;
 

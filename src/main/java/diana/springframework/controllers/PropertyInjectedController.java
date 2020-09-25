@@ -1,7 +1,6 @@
 package diana.springframework.controllers;
 
-import diana.springframework.services.GreetingService;
-import diana.springframework.services.GreetingServiceImpl;
+import diana.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

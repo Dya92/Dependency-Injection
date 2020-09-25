@@ -1,6 +1,6 @@
 package diana.springframework.controllers;
 
-import diana.springframework.services.GreetingService;
+import diana.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller

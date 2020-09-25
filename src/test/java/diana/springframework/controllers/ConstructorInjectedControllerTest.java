@@ -1,6 +1,6 @@
 package diana.springframework.controllers;
 
-import diana.springframework.services.GreetingServiceImpl;
+import diana.services.GreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
