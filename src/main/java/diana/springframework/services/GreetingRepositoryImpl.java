@@ -1,4 +1,4 @@
-package guru.springframework.services;
+package diana.springframework.services;
 
 import org.springframework.stereotype.Component;
 
