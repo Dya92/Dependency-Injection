@@ -1,0 +1,5 @@
+diana:
+  jms:
+    username: JMS username
+    password: jms password
+    url: jms url

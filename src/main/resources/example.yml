@@ -1,0 +1,37 @@
+# this is a comment
+# yaml is a datasource markup language
+
+name: John
+
+names: # inline comment
+  - John
+  - Paul
+  - Ringo
+
+pound_sign: "#"
+
+book:
+    author: Joe Buck
+    publisher: random house
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no # no, false, FALSE
+
+string_val: "This is a quote"
+
+colon_string: "my courses: one two three"
+
+include_new_lines:
+  asf dawdwa
+  dwada fege gaga
+  dwfw gefea g
+
+ignore_new_lines: >
+  this is
+  just one long
+  string
