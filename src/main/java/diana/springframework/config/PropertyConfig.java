@@ -6,11 +6,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 @Configuration
 //indicate that those datasource properties are to be used, from my properties file
 @PropertySource("classpath:datasource.properties")
 public class PropertyConfig {
+
+    //@Autowire but spring wants constructor for environment
+    Environment env;
+
+    public PropertyConfig(Environment env) {
+        this.env = env;
+    }
 
     //spring expression language = ${smth} = value of expression
     @Value("${diana.username}")
@@ -26,13 +34,18 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(user);
+        //get the user properties that I manually set in Edit Configuration -> Environment Variables
+        //because the name of the system variable is USERNAME
+        //if it were DIANA_USERNAME, this wouldn't be necessary as is sorta matches the property name from datasource.properties
+        fakeDataSource.setUser(env.getProperty("USERNAME"));
+        //fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
     }
 
     //this allows us to wire up by value - it matches up our properties by values
+    //works just fine without this bean
     @Bean
     public static PropertySourcesPlaceholderConfigurer properties() {
         PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
