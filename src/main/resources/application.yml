@@ -3,3 +3,11 @@ diana:
     username: JMS username
     password: jms password
     url: jms url
+
+--- #file separator
+spring:
+  profiles: de
+
+diana:
+  jms:
+    username: JMS username in GERMAN - I come from application.yml
